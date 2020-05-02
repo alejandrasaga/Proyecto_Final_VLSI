@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.460
+TNS   : -56.568
+
+Type  : Slow 1200mV 85C Model Setup 'switchCarta[0]'
+Slack : -2.523
+TNS   : -32.883
+
+Type  : Slow 1200mV 85C Model Setup 'reloj:DIV_CLK|clkLED'
+Slack : -2.154
+TNS   : -5.399
+
+Type  : Slow 1200mV 85C Model Hold 'switchCarta[0]'
+Slack : -0.348
+TNS   : -1.083
+
+Type  : Slow 1200mV 85C Model Hold 'reloj:DIV_CLK|clkLED'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.637
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -42.284
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'switchCarta[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLED'
+Slack : -1.403
+TNS   : -7.015
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -4.063
+TNS   : -49.153
+
+Type  : Slow 1200mV 0C Model Setup 'switchCarta[0]'
+Slack : -2.402
+TNS   : -30.319
+
+Type  : Slow 1200mV 0C Model Setup 'reloj:DIV_CLK|clkLED'
+Slack : -1.859
+TNS   : -4.602
+
+Type  : Slow 1200mV 0C Model Hold 'switchCarta[0]'
+Slack : -0.256
+TNS   : -0.447
+
+Type  : Slow 1200mV 0C Model Hold 'reloj:DIV_CLK|clkLED'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.590
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -42.284
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'switchCarta[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLED'
+Slack : -1.403
+TNS   : -7.015
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.431
+TNS   : -8.781
+
+Type  : Fast 1200mV 0C Model Setup 'switchCarta[0]'
+Slack : -0.794
+TNS   : -9.410
+
+Type  : Fast 1200mV 0C Model Setup 'reloj:DIV_CLK|clkLED'
+Slack : -0.487
+TNS   : -0.487
+
+Type  : Fast 1200mV 0C Model Hold 'switchCarta[0]'
+Slack : -0.208
+TNS   : -1.223
+
+Type  : Fast 1200mV 0C Model Hold 'reloj:DIV_CLK|clkLED'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.248
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -31.784
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'switchCarta[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLED'
+Slack : -1.000
+TNS   : -5.000
+
+------------------------------------------------------------
