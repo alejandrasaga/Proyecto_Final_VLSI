@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Memorama_Final
-Sat May 02 17:33:06 2020
+Sat May 02 19:03:29 2020
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Port Connectivity Checks: "reloj:DIV_CLK"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,15 +43,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 02 17:33:06 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat May 02 19:03:29 2020       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Memorama_Final                              ;
 ; Top-level Entity Name              ; TOP                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 103                                         ;
-;     Total combinational functions  ; 103                                         ;
-;     Dedicated logic registers      ; 33                                          ;
-; Total registers                    ; 33                                          ;
+; Total logic elements               ; 153                                         ;
+;     Total combinational functions  ; 123                                         ;
+;     Dedicated logic registers      ; 113                                         ;
+; Total registers                    ; 113                                         ;
 ; Total pins                         ; 66                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -183,20 +182,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 103       ;
+; Estimated Total logic elements              ; 153       ;
 ;                                             ;           ;
-; Total combinational functions               ; 103       ;
+; Total combinational functions               ; 123       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 45        ;
-;     -- 3 input functions                    ; 29        ;
-;     -- <=2 input functions                  ; 29        ;
+;     -- 4 input functions                    ; 42        ;
+;     -- 3 input functions                    ; 25        ;
+;     -- <=2 input functions                  ; 56        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 77        ;
-;     -- arithmetic mode                      ; 26        ;
+;     -- normal mode                          ; 72        ;
+;     -- arithmetic mode                      ; 51        ;
 ;                                             ;           ;
-; Total registers                             ; 33        ;
-;     -- Dedicated logic registers            ; 33        ;
+; Total registers                             ; 113       ;
+;     -- Dedicated logic registers            ; 113       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 66        ;
@@ -204,9 +203,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 28        ;
-; Total fan-out                               ; 505       ;
-; Average fan-out                             ; 1.88      ;
+; Maximum fan-out                             ; 55        ;
+; Total fan-out                               ; 709       ;
+; Average fan-out                             ; 1.93      ;
 +---------------------------------------------+-----------+
 
 
@@ -215,69 +214,25 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name   ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
-; |TOP                       ; 103 (0)             ; 33 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |TOP                  ; TOP         ; work         ;
-;    |cronometro:CRONO|      ; 6 (6)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP|cronometro:CRONO ; cronometro  ; work         ;
-;    |displays:DIS|          ; 48 (48)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP|displays:DIS     ; displays    ; work         ;
-;    |reloj:DIV_CLK|         ; 49 (49)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP|reloj:DIV_CLK    ; reloj       ; work         ;
+; |TOP                       ; 123 (0)             ; 113 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |TOP                  ; TOP         ; work         ;
+;    |cronometro:CRONO|      ; 15 (15)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP|cronometro:CRONO ; cronometro  ; work         ;
+;    |displays:DIS|          ; 16 (16)             ; 43 (43)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP|displays:DIS     ; displays    ; work         ;
+;    |reloj:DIV_CLK|         ; 92 (92)             ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP|reloj:DIV_CLK    ; reloj       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                   ;
-+-----------------------------------------------------+------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
-+-----------------------------------------------------+------------------------+------------------------+
-; displays:DIS|Dis0[0]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis0[1]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis0[3]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis0[4]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis0[5]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis0[6]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis0[7]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[0]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[1]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[2]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[3]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[4]                                ; GND                    ; yes                    ;
-; displays:DIS|Dis1[5]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[6]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis1[7]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis2[0]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis2[1]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis2[2]                                ; GND                    ; yes                    ;
-; displays:DIS|Dis2[3]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis2[4]                                ; GND                    ; yes                    ;
-; displays:DIS|Dis2[5]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis2[6]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis2[7]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[0]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[1]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[2]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[3]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[4]                                ; GND                    ; yes                    ;
-; displays:DIS|Dis3[5]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[6]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis3[7]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[0]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[1]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[2]                                ; GND                    ; yes                    ;
-; displays:DIS|Dis4[3]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[4]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[5]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[6]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis4[7]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis5[0]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis5[1]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis5[3]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis5[5]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis5[6]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|Dis5[7]                                ; displays:DIS|Dis0[7]   ; yes                    ;
-; displays:DIS|conteo[1]                              ; displays:DIS|conteo[1] ; yes                    ;
-; displays:DIS|conteo[0]                              ; displays:DIS|conteo[1] ; yes                    ;
-; Number of user-specified and inferred latches = 47  ;                        ;                        ;
-+-----------------------------------------------------+------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; displays:DIS|Dis5[2,4]                ; Stuck at VCC due to stuck port data_in ;
+; displays:DIS|Dis4[2]                  ; Stuck at VCC due to stuck port data_in ;
+; displays:DIS|Dis2[4]                  ; Stuck at VCC due to stuck port data_in ;
+; displays:DIS|Dis0[2]                  ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 5 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -285,23 +240,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 33    ;
+; Total registers                              ; 113   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reloj:DIV_CLK"                                                                           ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; clkletras ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -310,21 +256,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 66                          ;
-; cycloneiii_ff         ; 33                          ;
+; cycloneiii_ff         ; 113                         ;
 ;     CLR               ; 4                           ;
-;     plain             ; 29                          ;
-; cycloneiii_lcell_comb ; 105                         ;
-;     arith             ; 26                          ;
-;         2 data inputs ; 26                          ;
-;     normal            ; 79                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 29                          ;
-;         4 data inputs ; 45                          ;
+;     ENA               ; 10                          ;
+;     plain             ; 99                          ;
+; cycloneiii_lcell_comb ; 124                         ;
+;     arith             ; 51                          ;
+;         2 data inputs ; 51                          ;
+;     normal            ; 73                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 42                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.60                        ;
-; Average LUT depth     ; 2.99                        ;
+; Average LUT depth     ; 2.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -343,7 +289,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat May 02 17:32:53 2020
+    Info: Processing started: Sat May 02 19:03:14 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Memorama_Final -c Memorama_Final
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -360,155 +306,26 @@ Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
     Info (12022): Found design unit 1: TOP-arqTOP File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 18
     Info (12023): Found entity 1: TOP File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 4
 Info (12127): Elaborating entity "TOP" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(21): object "clkLetras" assigned a value but never read File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 21
-Info (12129): Elaborating entity "reloj" using architecture "A:arqreloj" for hierarchy "reloj:DIV_CLK" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 23
-Info (12129): Elaborating entity "cronometro" using architecture "A:arqcronometro" for hierarchy "cronometro:CRONO" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 24
-Warning (10541): VHDL Signal Declaration warning at cronometro.vhd(10): used implicit default value for signal "LED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 10
-Warning (10036): Verilog HDL or VHDL warning at cronometro.vhd(16): object "CTALED" assigned a value but never read File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 16
-Info (12129): Elaborating entity "displays" using architecture "A:arqdisplays" for hierarchy "displays:DIS" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 25
-Warning (10492): VHDL Process Statement warning at displays.vhd(44): signal "conteo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 44
-Warning (10492): VHDL Process Statement warning at displays.vhd(52): signal "conteo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at displays.vhd(61): signal "conteo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at displays.vhd(70): signal "conteo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at displays.vhd(128): signal "conteo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 128
-Warning (10492): VHDL Process Statement warning at displays.vhd(136): signal "conteo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 136
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "Dis0", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "Dis1", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "Dis2", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "Dis3", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "Dis4", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "Dis5", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at displays.vhd(42): inferring latch(es) for signal or variable "conteo", which holds its previous value in one or more paths through the process File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "conteo[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "conteo[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[2]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[3]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[4]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[5]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[6]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis5[7]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[2]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[3]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[4]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[5]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[6]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis4[7]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[2]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[3]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[4]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[5]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[6]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis3[7]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[2]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[3]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[4]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[5]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[6]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis2[7]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[2]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[3]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[4]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[5]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[6]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis1[7]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[0]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[1]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[2]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[3]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[4]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[5]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[6]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (10041): Inferred latch for "Dis0[7]" at displays.vhd(42) File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis0[7]" merged with LATCH primitive "displays:DIS|Dis0[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis0[6]" merged with LATCH primitive "displays:DIS|Dis0[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis0[5]" merged with LATCH primitive "displays:DIS|Dis0[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis0[4]" merged with LATCH primitive "displays:DIS|Dis0[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis0[3]" merged with LATCH primitive "displays:DIS|Dis0[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis0[1]" merged with LATCH primitive "displays:DIS|Dis0[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis1[5]" merged with LATCH primitive "displays:DIS|Dis1[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis1[2]" merged with LATCH primitive "displays:DIS|Dis1[1]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis1[6]" merged with LATCH primitive "displays:DIS|Dis1[3]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis2[5]" merged with LATCH primitive "displays:DIS|Dis2[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis2[7]" merged with LATCH primitive "displays:DIS|Dis2[1]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis2[6]" merged with LATCH primitive "displays:DIS|Dis2[3]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis3[7]" merged with LATCH primitive "displays:DIS|Dis3[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis3[5]" merged with LATCH primitive "displays:DIS|Dis3[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis3[1]" merged with LATCH primitive "displays:DIS|Dis3[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis3[6]" merged with LATCH primitive "displays:DIS|Dis3[2]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis3[3]" merged with LATCH primitive "displays:DIS|Dis3[2]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis4[6]" merged with LATCH primitive "displays:DIS|Dis4[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis4[7]" merged with LATCH primitive "displays:DIS|Dis4[1]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis4[5]" merged with LATCH primitive "displays:DIS|Dis4[3]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis4[4]" merged with LATCH primitive "displays:DIS|Dis4[3]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis5[7]" merged with LATCH primitive "displays:DIS|Dis5[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis5[6]" merged with LATCH primitive "displays:DIS|Dis5[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis5[5]" merged with LATCH primitive "displays:DIS|Dis5[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis5[3]" merged with LATCH primitive "displays:DIS|Dis5[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Info (13026): Duplicate LATCH primitive "displays:DIS|Dis5[1]" merged with LATCH primitive "displays:DIS|Dis5[0]" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-Warning (13012): Latch displays:DIS|Dis0[0] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis1[0] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis1[1] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis1[3] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis1[7] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis2[0] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis2[1] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis2[3] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis3[0] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis3[2] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis4[0] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis4[1] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis4[3] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
-Warning (13012): Latch displays:DIS|Dis5[0] has unsafe behavior File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/displays.vhd Line: 42
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cronometro:CRONO|avisoSignal File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/cronometro.vhd Line: 26
+Info (12129): Elaborating entity "reloj" using architecture "A:arqreloj" for hierarchy "reloj:DIV_CLK" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 24
+Info (12129): Elaborating entity "cronometro" using architecture "A:arqcronometro" for hierarchy "cronometro:CRONO" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 25
+Info (12129): Elaborating entity "displays" using architecture "A:arqdisplays" for hierarchy "displays:DIS" File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 26
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED[0]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[1]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[2]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[3]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[4]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[5]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[7]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[8]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
-    Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 9
     Warning (13410): Pin "display0[2]" is stuck at VCC File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 10
+    Warning (13410): Pin "display2[4]" is stuck at VCC File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 12
+    Warning (13410): Pin "display4[2]" is stuck at VCC File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 14
     Warning (13410): Pin "display5[2]" is stuck at VCC File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 15
     Warning (13410): Pin "display5[4]" is stuck at VCC File: C:/Users/alexa/Documents/Semestre 2020-2/Diseno Digital VLSI/Proyectos/Memorama_Final/TOP.vhd Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 169 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 230 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 103 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4792 megabytes
-    Info: Processing ended: Sat May 02 17:33:06 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 164 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4794 megabytes
+    Info: Processing ended: Sat May 02 19:03:29 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
 
 

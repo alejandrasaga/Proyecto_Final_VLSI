@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 
 ENTITY displays IS
 port(
-	--clk: in std_logic; --reloj para las cartas
+	clk: in std_logic; --reloj para las cartas
 	switchCarta: in std_logic_vector(5 downto 0); --selector de carta
 	aviso: in std_logic;
 	display0: out std_logic_vector (7 downto 0); --cartas
@@ -39,107 +39,107 @@ SIGNAL Dis5 : STD_LOGIC_VECTOR(7 downto 0);
 SIGNAL conteo: integer range 0 to 2;
 BEGIN
 
-	CARTAS_JUEGO: PROCESS (switchCarta, aviso)
+	CARTAS_JUEGO: PROCESS (switchCarta, aviso, clk)
 	BEGIN
-	if(aviso = '0') and (conteo < 2) then
-		if (switchCarta = "010001") then
-			Dis0 <= CARTA_PAR1;
-			Dis1 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis4 <= CARTA_PAR1;
-			Dis5 <= APAGADAS;
-			conteo <= conteo +1;
+	IF(CLK'event and clk = '1') then
+		if(aviso = '0') then
+			CASE switchCarta IS
+				WHEN "010001" =>
+					Dis0 <= CARTA_PAR1;
+					Dis1 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis4 <= CARTA_PAR1;
+					Dis5 <= APAGADAS;
 		
-		elsif (switchCarta = "100100") then
-			Dis0 <= APAGADAS;
-			Dis1 <= APAGADAS;
-			Dis2 <= CARTA_PAR2;
-			Dis3 <= APAGADAS;
-			Dis4 <= APAGADAS;
-			Dis5 <= CARTA_PAR2;
-			conteo <= conteo +1;
+				WHEN "100100" =>
+					Dis0 <= APAGADAS;
+					Dis1 <= APAGADAS;
+					Dis2 <= CARTA_PAR2;
+					Dis3 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis5 <= CARTA_PAR2;
 		
-		elsif (switchCarta = "001010") then
-			Dis0 <= APAGADAS;
-			Dis1 <= CARTA_PAR3;
-			Dis2 <= APAGADAS;
-			Dis3 <= CARTA_PAR3;
-			Dis4 <= APAGADAS;
-			Dis5 <= APAGADAS;
-			conteo <= conteo +1;
+				WHEN "001010" =>
+					Dis0 <= APAGADAS;
+					Dis1 <= CARTA_PAR3;
+					Dis2 <= APAGADAS;
+					Dis3 <= CARTA_PAR3;
+					Dis4 <= APAGADAS;
+					Dis5 <= APAGADAS;
 		
-		elsif (switchCarta = "000001") then
-			Dis0 <= CARTA_PAR1;
-			Dis1 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis4 <= APAGADAS;
-			Dis5 <= APAGADAS;
+				WHEN "000001" =>
+					Dis0 <= CARTA_PAR1;
+					Dis1 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis5 <= APAGADAS;
 			
-		elsif (switchCarta = "000010") then
-			Dis1 <= CARTA_PAR3;
-			Dis0 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis4 <= APAGADAS;
-			Dis5 <= APAGADAS;
+				WHEN "000010" =>
+					Dis1 <= CARTA_PAR3;
+					Dis0 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis5 <= APAGADAS;
 			
-		elsif (switchCarta = "000100") then
-			Dis2 <= CARTA_PAR2;
-			Dis1 <= APAGADAS;
-			Dis0 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis4 <= APAGADAS;
-			Dis5 <= APAGADAS;
+				WHEN "000100" =>
+					Dis2 <= CARTA_PAR2;
+					Dis1 <= APAGADAS;
+					Dis0 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis5 <= APAGADAS;
 			
-		elsif (switchCarta = "001000") then
-			Dis3 <= CARTA_PAR3;
-			Dis1 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis0 <= APAGADAS;
-			Dis4 <= APAGADAS;
-			Dis5 <= APAGADAS;
+				WHEN "001000" =>
+					Dis3 <= CARTA_PAR3;
+					Dis1 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis0 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis5 <= APAGADAS;
 		
-		elsif (switchCarta = "010000") then
-			Dis4 <= CARTA_PAR1;
-			Dis1 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis0 <= APAGADAS;
-			Dis5 <= APAGADAS;
+				when "010000" => 
+					Dis4 <= CARTA_PAR1;
+					Dis1 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis0 <= APAGADAS;
+					Dis5 <= APAGADAS;
 			
-		elsif (switchCarta = "100000") then
-			Dis5 <= CARTA_PAR2;
-			Dis1 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis4 <= APAGADAS;
-			Dis0 <= APAGADAS;
+				WHEN "100000" =>
+					Dis5 <= CARTA_PAR2;
+					Dis1 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis0 <= APAGADAS;
 		
-		else 
+				WHEN OTHERS =>
+					Dis0 <= APAGADAS;
+					Dis1 <= APAGADAS;
+					Dis2 <= APAGADAS;
+					Dis3 <= APAGADAS;
+					Dis4 <= APAGADAS;
+					Dis5 <= APAGADAS;
+			END CASE;
+		elsif(aviso = '1') then
 			Dis0 <= APAGADAS;
-			Dis1 <= APAGADAS;
-			Dis2 <= APAGADAS;
-			Dis3 <= APAGADAS;
-			Dis4 <= APAGADAS;
+			Dis1 <= letra_E;
+			Dis2 <= letra_S;
+			Dis3 <= letra_o;
+			Dis4 <= letra_L;
 			Dis5 <= APAGADAS;
-		end if;
-	elsif(aviso = '1' and conteo <2) then
-		Dis0 <= APAGADAS;
-		Dis1 <= letra_E;
-		Dis2 <= letra_S;
-		Dis3 <= letra_o;
-		Dis4 <= letra_L;
-		Dis5 <= APAGADAS;
 	
-	elsif(aviso ='0' and conteo = 2) then
-		Dis0 <= APAGADAS;
-		Dis1 <= letra_d;
-		Dis2 <= letra_O;
-		Dis3 <= letra_o;
-		Dis4 <= letra_G;
-		Dis5 <= APAGADAS;
+	--elsif(aviso ='0' and conteo = 2) then
+		--Dis0 <= APAGADAS;
+		--Dis1 <= letra_d;
+		--Dis2 <= letra_O;
+		--Dis3 <= letra_o;
+		--Dis4 <= letra_G;
+		--Dis5 <= APAGADAS;
+		END IF;
 	end if;
 	END PROCESS;
 	

@@ -18,10 +18,11 @@ END ENTITY;
 ARCHITECTURE arqTOP OF TOP IS
 SIGNAL AVISO: STD_LOGIC;
 SIGNAL clkLED: STD_LOGIC;
+SIGNAL clkLEDOS: STD_LOGIC;
 SIGNAL clkLetras: STD_LOGIC;
 BEGIN
-	DIV_CLK: ENTITY WORK.reloj(arqReloj) PORT MAP(clk, clkLED, clkLetras);
+	DIV_CLK: ENTITY WORK.reloj(arqReloj) PORT MAP(clk, clkLED, CLKLETRAS);
 	CRONO: ENTITY WORK.cronometro(arqcronometro) PORT MAP (clkLED, switchRESET, LED, AVISO);
-	DIS: ENTITY WORK.displays(arqDisplays) PORT MAP (switchCarta, AVISO, display0,display1,display2,display3,
+	DIS: ENTITY WORK.displays(arqDisplays) PORT MAP (clkLETRAS, switchCarta, AVISO, display0,display1,display2,display3,
 	display4,display5);
 END ARCHITECTURE;

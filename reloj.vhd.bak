@@ -13,7 +13,6 @@ end entity;
 architecture arqReloj of reloj is
 	signal conteo: integer range 0 to 100000000;--100,000,000
 	signal conteo2: integer range 0 to 50000000;--50,000,000
-	signal clk2: STD_LOGIC;
 BEGIN
 		LENTO: process(clk1) --clk lento para los LEDS, es decir llevara la cuenta 
 		begin
@@ -26,16 +25,16 @@ BEGIN
 			end if;
 		end process;
 		
-		RAPIDO: process(clk1) --clk lento para los LEDS, es decir llevara la cuenta 
-		begin
+		GAME_OVER : process(clk1)
+		BEGIN
 			if (clk1' event and clk1 = '1') then
 				conteo2 <= conteo2 + 1; 
-				if (conteo2 = 500000) then
-					conteo2 <= 0;
+				if (conteo2 = 5000000) then
+						conteo2 <= 0;
 					clkLETRAS <= not(clkLETRAS);
 				end if;
 			end if;
-		end process;
-	
+		END PROCESS;
+		
 		
 END;
