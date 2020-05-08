@@ -3,16 +3,16 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.402
-TNS   : -110.279
+Slack : -4.469
+TNS   : -106.137
 
 Type  : Slow 1200mV 85C Model Setup 'reloj:DIV_CLK|clkLETRAS'
-Slack : -1.253
-TNS   : -43.257
+Slack : -1.462
+TNS   : -47.117
 
 Type  : Slow 1200mV 85C Model Setup 'reloj:DIV_CLK|clkLED'
-Slack : -1.053
-TNS   : -12.323
+Slack : -1.037
+TNS   : -12.438
 
 Type  : Slow 1200mV 85C Model Hold 'reloj:DIV_CLK|clkLED'
 Slack : 0.348
@@ -23,7 +23,7 @@ Slack : 0.426
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'reloj:DIV_CLK|clkLETRAS'
-Slack : 0.762
+Slack : 0.759
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -32,26 +32,26 @@ TNS   : -80.165
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLETRAS'
 Slack : -1.403
-TNS   : -60.329
+TNS   : -63.135
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLED'
 Slack : -1.403
 TNS   : -21.045
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.007
-TNS   : -95.273
+Slack : -4.086
+TNS   : -91.714
 
 Type  : Slow 1200mV 0C Model Setup 'reloj:DIV_CLK|clkLETRAS'
-Slack : -1.051
-TNS   : -35.994
+Slack : -1.301
+TNS   : -39.892
 
 Type  : Slow 1200mV 0C Model Setup 'reloj:DIV_CLK|clkLED'
-Slack : -0.873
-TNS   : -9.914
+Slack : -0.864
+TNS   : -10.044
 
 Type  : Slow 1200mV 0C Model Hold 'reloj:DIV_CLK|clkLED'
-Slack : 0.312
+Slack : 0.313
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
@@ -59,7 +59,7 @@ Slack : 0.393
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'reloj:DIV_CLK|clkLETRAS'
-Slack : 0.721
+Slack : 0.700
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -68,26 +68,26 @@ TNS   : -80.165
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLETRAS'
 Slack : -1.403
-TNS   : -60.329
+TNS   : -63.135
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLED'
 Slack : -1.403
 TNS   : -21.045
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.418
-TNS   : -15.922
+Slack : -1.458
+TNS   : -13.997
 
 Type  : Fast 1200mV 0C Model Setup 'reloj:DIV_CLK|clkLETRAS'
-Slack : 0.021
-TNS   : 0.000
+Slack : -0.104
+TNS   : -0.333
 
 Type  : Fast 1200mV 0C Model Setup 'reloj:DIV_CLK|clkLED'
-Slack : 0.105
+Slack : 0.121
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'reloj:DIV_CLK|clkLED'
-Slack : 0.153
+Slack : 0.152
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
@@ -95,16 +95,16 @@ Slack : 0.170
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'reloj:DIV_CLK|clkLETRAS'
-Slack : 0.275
+Slack : 0.287
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -59.920
+TNS   : -59.880
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLETRAS'
 Slack : -1.000
-TNS   : -43.000
+TNS   : -45.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reloj:DIV_CLK|clkLED'
 Slack : -1.000

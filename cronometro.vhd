@@ -53,3 +53,4 @@ BEGIN
 	aviso <= avisoSignal;
 
 END ARCHITECTURE;
+

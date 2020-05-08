@@ -1,5 +1,5 @@
 Timing Analyzer report for Memorama_Final
-Sat May 02 19:03:57 2020
+Thu May 07 23:49:24 2020
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -91,12 +91,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   1.7%      ;
+;     Processors 2-4         ;   1.4%      ;
 +----------------------------+-------------+
 
 
@@ -116,8 +116,8 @@ refer to the applicable agreement for further details.
 +------------+-----------------+----------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name           ; Note                                           ;
 +------------+-----------------+----------------------+------------------------------------------------+
-; 185.12 MHz ; 185.12 MHz      ; clk                  ;                                                ;
-; 487.09 MHz ; 416.15 MHz      ; reloj:DIV_CLK|clkLED ; limit due to minimum period restriction (tmin) ;
+; 182.85 MHz ; 182.85 MHz      ; clk                  ;                                                ;
+; 490.92 MHz ; 416.15 MHz      ; reloj:DIV_CLK|clkLED ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+----------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -127,9 +127,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; clk                     ; -4.402 ; -110.279      ;
-; reloj:DIV_CLK|clkLETRAS ; -1.253 ; -43.257       ;
-; reloj:DIV_CLK|clkLED    ; -1.053 ; -12.323       ;
+; clk                     ; -4.469 ; -106.137      ;
+; reloj:DIV_CLK|clkLETRAS ; -1.462 ; -47.117       ;
+; reloj:DIV_CLK|clkLED    ; -1.037 ; -12.438       ;
 +-------------------------+--------+---------------+
 
 
@@ -140,7 +140,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+-------+---------------+
 ; reloj:DIV_CLK|clkLED    ; 0.348 ; 0.000         ;
 ; clk                     ; 0.426 ; 0.000         ;
-; reloj:DIV_CLK|clkLETRAS ; 0.762 ; 0.000         ;
+; reloj:DIV_CLK|clkLETRAS ; 0.759 ; 0.000         ;
 +-------------------------+-------+---------------+
 
 
@@ -162,7 +162,7 @@ No paths to report.
 ; Clock                   ; Slack  ; End Point TNS  ;
 +-------------------------+--------+----------------+
 ; clk                     ; -3.000 ; -80.165        ;
-; reloj:DIV_CLK|clkLETRAS ; -1.403 ; -60.329        ;
+; reloj:DIV_CLK|clkLETRAS ; -1.403 ; -63.135        ;
 ; reloj:DIV_CLK|clkLED    ; -1.403 ; -21.045        ;
 +-------------------------+--------+----------------+
 
@@ -178,8 +178,8 @@ No synchronizer chains to report.
 +------------+-----------------+----------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name           ; Note                                           ;
 +------------+-----------------+----------------------+------------------------------------------------+
-; 199.72 MHz ; 199.72 MHz      ; clk                  ;                                                ;
-; 533.9 MHz  ; 416.15 MHz      ; reloj:DIV_CLK|clkLED ; limit due to minimum period restriction (tmin) ;
+; 196.62 MHz ; 196.62 MHz      ; clk                  ;                                                ;
+; 536.48 MHz ; 416.15 MHz      ; reloj:DIV_CLK|clkLED ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+----------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -189,9 +189,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; clk                     ; -4.007 ; -95.273       ;
-; reloj:DIV_CLK|clkLETRAS ; -1.051 ; -35.994       ;
-; reloj:DIV_CLK|clkLED    ; -0.873 ; -9.914        ;
+; clk                     ; -4.086 ; -91.714       ;
+; reloj:DIV_CLK|clkLETRAS ; -1.301 ; -39.892       ;
+; reloj:DIV_CLK|clkLED    ; -0.864 ; -10.044       ;
 +-------------------------+--------+---------------+
 
 
@@ -200,9 +200,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+-------+---------------+
 ; Clock                   ; Slack ; End Point TNS ;
 +-------------------------+-------+---------------+
-; reloj:DIV_CLK|clkLED    ; 0.312 ; 0.000         ;
+; reloj:DIV_CLK|clkLED    ; 0.313 ; 0.000         ;
 ; clk                     ; 0.393 ; 0.000         ;
-; reloj:DIV_CLK|clkLETRAS ; 0.721 ; 0.000         ;
+; reloj:DIV_CLK|clkLETRAS ; 0.700 ; 0.000         ;
 +-------------------------+-------+---------------+
 
 
@@ -224,7 +224,7 @@ No paths to report.
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
 ; clk                     ; -3.000 ; -80.165       ;
-; reloj:DIV_CLK|clkLETRAS ; -1.403 ; -60.329       ;
+; reloj:DIV_CLK|clkLETRAS ; -1.403 ; -63.135       ;
 ; reloj:DIV_CLK|clkLED    ; -1.403 ; -21.045       ;
 +-------------------------+--------+---------------+
 
@@ -240,9 +240,9 @@ No synchronizer chains to report.
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; clk                     ; -1.418 ; -15.922       ;
-; reloj:DIV_CLK|clkLETRAS ; 0.021  ; 0.000         ;
-; reloj:DIV_CLK|clkLED    ; 0.105  ; 0.000         ;
+; clk                     ; -1.458 ; -13.997       ;
+; reloj:DIV_CLK|clkLETRAS ; -0.104 ; -0.333        ;
+; reloj:DIV_CLK|clkLED    ; 0.121  ; 0.000         ;
 +-------------------------+--------+---------------+
 
 
@@ -251,9 +251,9 @@ No synchronizer chains to report.
 +-------------------------+-------+---------------+
 ; Clock                   ; Slack ; End Point TNS ;
 +-------------------------+-------+---------------+
-; reloj:DIV_CLK|clkLED    ; 0.153 ; 0.000         ;
+; reloj:DIV_CLK|clkLED    ; 0.152 ; 0.000         ;
 ; clk                     ; 0.170 ; 0.000         ;
-; reloj:DIV_CLK|clkLETRAS ; 0.275 ; 0.000         ;
+; reloj:DIV_CLK|clkLETRAS ; 0.287 ; 0.000         ;
 +-------------------------+-------+---------------+
 
 
@@ -274,8 +274,8 @@ No paths to report.
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; clk                     ; -3.000 ; -59.920       ;
-; reloj:DIV_CLK|clkLETRAS ; -1.000 ; -43.000       ;
+; clk                     ; -3.000 ; -59.880       ;
+; reloj:DIV_CLK|clkLETRAS ; -1.000 ; -45.000       ;
 ; reloj:DIV_CLK|clkLED    ; -1.000 ; -15.000       ;
 +-------------------------+--------+---------------+
 
@@ -291,14 +291,14 @@ No synchronizer chains to report.
 +--------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                    ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack         ; -4.402   ; 0.153 ; N/A      ; N/A     ; -3.000              ;
-;  clk                     ; -4.402   ; 0.170 ; N/A      ; N/A     ; -3.000              ;
-;  reloj:DIV_CLK|clkLED    ; -1.053   ; 0.153 ; N/A      ; N/A     ; -1.403              ;
-;  reloj:DIV_CLK|clkLETRAS ; -1.253   ; 0.275 ; N/A      ; N/A     ; -1.403              ;
-; Design-wide TNS          ; -165.859 ; 0.0   ; 0.0      ; 0.0     ; -161.539            ;
-;  clk                     ; -110.279 ; 0.000 ; N/A      ; N/A     ; -80.165             ;
-;  reloj:DIV_CLK|clkLED    ; -12.323  ; 0.000 ; N/A      ; N/A     ; -21.045             ;
-;  reloj:DIV_CLK|clkLETRAS ; -43.257  ; 0.000 ; N/A      ; N/A     ; -60.329             ;
+; Worst-case Slack         ; -4.469   ; 0.152 ; N/A      ; N/A     ; -3.000              ;
+;  clk                     ; -4.469   ; 0.170 ; N/A      ; N/A     ; -3.000              ;
+;  reloj:DIV_CLK|clkLED    ; -1.037   ; 0.152 ; N/A      ; N/A     ; -1.403              ;
+;  reloj:DIV_CLK|clkLETRAS ; -1.462   ; 0.287 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS          ; -165.692 ; 0.0   ; 0.0      ; 0.0     ; -164.345            ;
+;  clk                     ; -106.137 ; 0.000 ; N/A      ; N/A     ; -80.165             ;
+;  reloj:DIV_CLK|clkLED    ; -12.438  ; 0.000 ; N/A      ; N/A     ; -21.045             ;
+;  reloj:DIV_CLK|clkLETRAS ; -47.117  ; 0.000 ; N/A      ; N/A     ; -63.135             ;
 +--------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -374,11 +374,11 @@ No synchronizer chains to report.
 +---------------------+-----------------------+-----------------+-----------------+
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
-; switchCarta[1]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; switchCarta[3]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; switchCarta[2]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; switchCarta[5]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switchCarta[0]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; switchCarta[5]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; switchCarta[1]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; switchCarta[2]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; switchCarta[3]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switchCarta[4]      ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; switchRESET         ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; clk                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
@@ -602,7 +602,7 @@ No synchronizer chains to report.
 ; reloj:DIV_CLK|clkLED    ; clk                     ; 1        ; 1        ; 0        ; 0        ;
 ; reloj:DIV_CLK|clkLETRAS ; clk                     ; 1        ; 1        ; 0        ; 0        ;
 ; reloj:DIV_CLK|clkLED    ; reloj:DIV_CLK|clkLED    ; 94       ; 0        ; 0        ; 0        ;
-; reloj:DIV_CLK|clkLED    ; reloj:DIV_CLK|clkLETRAS ; 43       ; 0        ; 0        ; 0        ;
+; reloj:DIV_CLK|clkLED    ; reloj:DIV_CLK|clkLETRAS ; 53       ; 0        ; 0        ; 0        ;
 +-------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -616,7 +616,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; reloj:DIV_CLK|clkLED    ; clk                     ; 1        ; 1        ; 0        ; 0        ;
 ; reloj:DIV_CLK|clkLETRAS ; clk                     ; 1        ; 1        ; 0        ; 0        ;
 ; reloj:DIV_CLK|clkLED    ; reloj:DIV_CLK|clkLED    ; 94       ; 0        ; 0        ; 0        ;
-; reloj:DIV_CLK|clkLED    ; reloj:DIV_CLK|clkLETRAS ; 43       ; 0        ; 0        ; 0        ;
+; reloj:DIV_CLK|clkLED    ; reloj:DIV_CLK|clkLETRAS ; 53       ; 0        ; 0        ; 0        ;
 +-------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -641,9 +641,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 204   ; 204  ;
-; Unconstrained Output Ports      ; 53    ; 53   ;
-; Unconstrained Output Port Paths ; 53    ; 53   ;
+; Unconstrained Input Port Paths  ; 274   ; 274  ;
+; Unconstrained Output Ports      ; 55    ; 55   ;
+; Unconstrained Output Port Paths ; 55    ; 55   ;
 +---------------------------------+-------+------+
 
 
@@ -707,6 +707,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; display2[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display2[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -720,6 +721,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; display3[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display4[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -783,6 +785,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; display2[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display2[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display2[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -796,6 +799,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; display3[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; display4[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; display4[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -816,7 +820,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat May 02 19:03:52 2020
+    Info: Processing started: Thu May 07 23:49:16 2020
 Info: Command: quartus_sta Memorama_Final -c Memorama_Final
 Info: qsta_default_script.tcl version: #2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -835,80 +839,80 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.402
+Info (332146): Worst-case setup slack is -4.469
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.402            -110.279 clk 
-    Info (332119):    -1.253             -43.257 reloj:DIV_CLK|clkLETRAS 
-    Info (332119):    -1.053             -12.323 reloj:DIV_CLK|clkLED 
+    Info (332119):    -4.469            -106.137 clk 
+    Info (332119):    -1.462             -47.117 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):    -1.037             -12.438 reloj:DIV_CLK|clkLED 
 Info (332146): Worst-case hold slack is 0.348
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.348               0.000 reloj:DIV_CLK|clkLED 
     Info (332119):     0.426               0.000 clk 
-    Info (332119):     0.762               0.000 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):     0.759               0.000 reloj:DIV_CLK|clkLETRAS 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -80.165 clk 
-    Info (332119):    -1.403             -60.329 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):    -1.403             -63.135 reloj:DIV_CLK|clkLETRAS 
     Info (332119):    -1.403             -21.045 reloj:DIV_CLK|clkLED 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.007
+Info (332146): Worst-case setup slack is -4.086
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.007             -95.273 clk 
-    Info (332119):    -1.051             -35.994 reloj:DIV_CLK|clkLETRAS 
-    Info (332119):    -0.873              -9.914 reloj:DIV_CLK|clkLED 
-Info (332146): Worst-case hold slack is 0.312
+    Info (332119):    -4.086             -91.714 clk 
+    Info (332119):    -1.301             -39.892 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):    -0.864             -10.044 reloj:DIV_CLK|clkLED 
+Info (332146): Worst-case hold slack is 0.313
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.312               0.000 reloj:DIV_CLK|clkLED 
+    Info (332119):     0.313               0.000 reloj:DIV_CLK|clkLED 
     Info (332119):     0.393               0.000 clk 
-    Info (332119):     0.721               0.000 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):     0.700               0.000 reloj:DIV_CLK|clkLETRAS 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -80.165 clk 
-    Info (332119):    -1.403             -60.329 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):    -1.403             -63.135 reloj:DIV_CLK|clkLETRAS 
     Info (332119):    -1.403             -21.045 reloj:DIV_CLK|clkLED 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.418
+Info (332146): Worst-case setup slack is -1.458
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.418             -15.922 clk 
-    Info (332119):     0.021               0.000 reloj:DIV_CLK|clkLETRAS 
-    Info (332119):     0.105               0.000 reloj:DIV_CLK|clkLED 
-Info (332146): Worst-case hold slack is 0.153
+    Info (332119):    -1.458             -13.997 clk 
+    Info (332119):    -0.104              -0.333 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):     0.121               0.000 reloj:DIV_CLK|clkLED 
+Info (332146): Worst-case hold slack is 0.152
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.153               0.000 reloj:DIV_CLK|clkLED 
+    Info (332119):     0.152               0.000 reloj:DIV_CLK|clkLED 
     Info (332119):     0.170               0.000 clk 
-    Info (332119):     0.275               0.000 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):     0.287               0.000 reloj:DIV_CLK|clkLETRAS 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -59.920 clk 
-    Info (332119):    -1.000             -43.000 reloj:DIV_CLK|clkLETRAS 
+    Info (332119):    -3.000             -59.880 clk 
+    Info (332119):    -1.000             -45.000 reloj:DIV_CLK|clkLETRAS 
     Info (332119):    -1.000             -15.000 reloj:DIV_CLK|clkLED 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4824 megabytes
-    Info: Processing ended: Sat May 02 19:03:57 2020
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Thu May 07 23:49:24 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 

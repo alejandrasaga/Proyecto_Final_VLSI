@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat May 02 19:03:29 2020
+Analysis & Synthesis Status : Successful - Thu May 07 23:48:44 2020
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : Memorama_Final
 Top-level Entity Name : TOP
 Family : MAX 10
-Total logic elements : 153
-    Total combinational functions : 123
-    Dedicated logic registers : 113
-Total registers : 113
+Total logic elements : 180
+    Total combinational functions : 151
+    Dedicated logic registers : 115
+Total registers : 115
 Total pins : 66
 Total virtual pins : 0
 Total memory bits : 0

@@ -115,6 +115,39 @@ BEGIN
 					Dis3 <= APAGADAS;
 					Dis4 <= APAGADAS;
 					Dis0 <= APAGADAS;
+					
+				WHEN "111111" =>
+					Dis0 <= APAGADAS;
+					Dis1 <= letra_d;
+					Dis2 <= letra_O;
+					Dis3 <= letra_o;
+					Dis4 <= letra_G;
+					Dis5 <= APAGADAS;
+					
+				 WHEN "110101" =>
+					Dis0 <=CARTA_PAR1;
+					Dis1 <=APAGADAS;
+					Dis2 <=CARTA_PAR2;
+					Dis3 <=APAGADAS;
+					Dis4 <=CARTA_PAR1;
+					Dis5 <=CARTA_PAR2;
+					
+				WHEN "011011" =>
+					Dis0 <=CARTA_PAR1;
+					Dis1 <=CARTA_PAR3;
+					Dis2 <=APAGADAS;
+					Dis3 <=CARTA_PAR3;
+					Dis4 <=CARTA_PAR1;
+					Dis5 <=APAGADAS;
+				
+				WHEN "101110" =>
+					Dis0 <=APAGADAS;
+					Dis1 <=CARTA_PAR3;
+					Dis2 <=CARTA_PAR2;
+					Dis3 <=CARTA_PAR3;
+					Dis4 <=APAGADAS;
+					Dis5 <=CARTA_PAR2;
+					
 		
 				WHEN OTHERS =>
 					Dis0 <= APAGADAS;
@@ -132,13 +165,7 @@ BEGIN
 			Dis4 <= letra_L;
 			Dis5 <= APAGADAS;
 	
-	--elsif(aviso ='0' and conteo = 2) then
-		--Dis0 <= APAGADAS;
-		--Dis1 <= letra_d;
-		--Dis2 <= letra_O;
-		--Dis3 <= letra_o;
-		--Dis4 <= letra_G;
-		--Dis5 <= APAGADAS;
+		
 		END IF;
 	end if;
 	END PROCESS;
