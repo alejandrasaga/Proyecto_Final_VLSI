@@ -36,6 +36,4 @@ BEGIN
 				end if;
 			end if;
 		end process;
-	
-		
 END;
